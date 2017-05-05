@@ -1,58 +1,22 @@
-# Notes
+# Ansible role for Mopidy
 
-## Docker
+Installs and configures [Mopidy](https://www.mopidy.com/)
 
-### Installation
+## Requirements
 
-```
-sudo apt-get install \
-    apt-transport-https \
-    ca-certificates \
-    curl \
-    software-properties-common
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo add-apt-repository \
-   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-   $(lsb_release -cs) \
-   stable"
-sudo apt-get update && sudo apt-get install docker-ce
-sudo usermod -a -G docker $(whoami)
-```
-
-## Molecule
-
-### Installation
-
-```
-sudo apt-get update && sudo apt-get install gcc python-pip libssl-dev libffi-dev virtualenv
-virtualenv .
-source bin/activate
-pip install ansible
-pip install docker
-pip install molecule
-```
-
-### Development
-
-```sh
-cd src/roles/mopidy
-molecule test
-```
-
-In the container:
-```sh
-nohup /usr/bin/mopidy --config /etc/mopidy/mopidy.conf &
-```
-
-Useful commands:
-
-docker exec -it mopidy bash
-apt-cache madison mopidy
+<!-- Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required. -->
 
 
-## Running it
+## Role Variables
 
-```sh
-# ansible-galaxy install -r requirements.yml
-ansible-playbook site.yml --ask-vault-pass
-```
+<!-- A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well. -->
+
+
+## Dependencies
+
+None
+
+
+## Example Playbook
+
+See included `playbook.yml`.
