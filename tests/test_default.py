@@ -53,6 +53,11 @@ def test_mopidy_configuration(File):
     assert f.user == 'root'
 
 
+def test_mopidy_audio_configuration(File):
+    parser = parse_config(File("/etc/mopidy/mopidy.conf"))
+    assert parser.get("audio", "output") == "autoaudiosink"
+
+
 def test_mopidy_mpd_configuration(File):
     parser = parse_config(File("/etc/mopidy/mopidy.conf"))
     assert parser.get("mpd", "hostname") == "::"

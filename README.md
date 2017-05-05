@@ -11,6 +11,10 @@ Installs and configures [Mopidy](https://www.mopidy.com/)
 
 <!-- A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well. -->
 
+Variable | Description
+--- | ---
+`mopidy_audio_output` | The audio output to use. Default: `autoaudiosink`. Use `output = audioresample ! audioconvert ! audio/x-raw,rate=48000,channels=2,format=S16LE ! wavenc ! filesink location=/tmp/snapfifo` for [Snapcast](https://github.com/badaix/snapcast).
+
 
 ## Dependencies
 
