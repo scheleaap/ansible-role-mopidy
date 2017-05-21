@@ -1,6 +1,7 @@
 ---
 # defaults file for mopidy
 mopidy_user: "{{ ansible_user_id }}"
+mopidy_hostname: "::"
 mopidy_lastfm_username: "{{ ansible_user_id }}"
 mopidy_lastfm_password: pass
 mopidy_spotify_username: "{{ ansible_user_id }}"

@@ -21,12 +21,12 @@ media_dir = /var/lib/mopidy/media
 playlists_dir = /var/lib/mopidy/playlists
 
 [mpd]
-hostname = ::
+hostname = {{ mopidy_hostname }}
 port = 6600
 
 [http]
 enabled = true
-hostname = ::
+hostname = {{ mopidy_hostname }}
 port = 6680
 static_dir =
 zeroconf = Mopidy HTTP server on $hostname
