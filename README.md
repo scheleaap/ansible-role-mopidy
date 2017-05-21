@@ -1,6 +1,6 @@
 # Ansible role for Mopidy
 
-Installs and configures [Mopidy](https://www.mopidy.com/)
+Installs and configures [Mopidy](https://www.mopidy.com/).
 
 ## Requirements
 
@@ -13,7 +13,7 @@ Installs and configures [Mopidy](https://www.mopidy.com/)
 
 Variable | Description
 --- | ---
-`mopidy_audio_output` | The audio output to use. Default: `autoaudiosink`. Use `output = audioresample ! audioconvert ! audio/x-raw,rate=48000,channels=2,format=S16LE ! wavenc ! filesink location=/tmp/snapfifo` for [Snapcast](https://github.com/badaix/snapcast).
+`mopidy_audio_output` | The audio output to use. Default: `autoaudiosink`. For [Snapcast](https://github.com/badaix/snapcast), use `output = audioresample ! audioconvert ! audio/x-raw,rate=48000,channels=2,format=S16LE ! wavenc ! filesink location=/tmp/snapfifo`.
 
 
 ## Dependencies
