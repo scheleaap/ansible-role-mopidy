@@ -15,6 +15,8 @@ Variable | Description
 --- | ---
 `mopidy_audio_output` | The audio output to use. Default: `autoaudiosink`. For [Snapcast](https://github.com/badaix/snapcast), use `output = audioresample ! audioconvert ! audio/x-raw,rate=48000,channels=2,format=S16LE ! wavenc ! filesink location=/tmp/snapfifo`.
 
+Use https://www.mopidy.com/authenticate/ to generate tokens for SoundCloud and/or Spotify.
+
 
 ## Dependencies
 

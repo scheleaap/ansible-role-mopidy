@@ -87,6 +87,11 @@ def test_mopidy_scrobbler_configuration(File):
     assert parser.get("scrobbler", "password") is not None
 
 
+def test_mopidy_soundcloud_configuration(File):
+    parser = parse_config(File("/etc/mopidy/mopidy.conf"))
+    assert parser.get("soundcloud", "auth_token") is not None
+
+
 def test_mopidy_spotify_configuration(File):
     parser = parse_config(File("/etc/mopidy/mopidy.conf"))
     assert parser.get("spotify", "enabled") == "true"
