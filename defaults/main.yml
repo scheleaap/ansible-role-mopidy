@@ -8,3 +8,5 @@ mopidy_soundcloud_auth_token: token123
 mopidy_spotify_username: "{{ ansible_user_id }}"
 mopidy_spotify_password: pass
 mopidy_audio_output: autoaudiosink
+mopidy_iris_country: EN
+mopidy_iris_locale: en_US

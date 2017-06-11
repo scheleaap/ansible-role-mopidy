@@ -70,6 +70,13 @@ def test_mopidy_http_configuration(File):
     assert parser.get("http", "port") == "6680"
 
 
+def test_mopidy_iris_configuration(File):
+    parser = parse_config(File("/etc/mopidy/mopidy.conf"))
+    assert parser.get("iris", "enabled") == "true"
+    assert parser.get("iris", "country") == "EN"
+    assert parser.get("iris", "locale") == "en_US"
+
+
 def test_mopidy_file_configuration(File):
     parser = parse_config(File("/etc/mopidy/mopidy.conf"))
     assert parser.get("file", "enabled") == "false"
