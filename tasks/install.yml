@@ -46,7 +46,7 @@
     name: "{{ item }}"
     state: present
   with_items:
-    - mopidy-spotify=3.0.0-0mopidy1
+    - mopidy-spotify=3.1.0-0mopidy1
     - mopidy-spotify-tunigo=1.0.0-0mopidy1
   notify:
     - restart mopidy

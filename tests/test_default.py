@@ -23,7 +23,7 @@ def test_mopidy_apt_packages_are_installed(Package):
         ("mopidy", "2.1.0-1"),
         ("mopidy-scrobbler", "1.1.1-3"),
         ("mopidy-soundcloud", "2.0.2-2"),
-        ("mopidy-spotify", "3.0.0-0mopidy1"),
+        ("mopidy-spotify", "3.1.0-0mopidy1"),
         ("mopidy-spotify-tunigo", "1.0.0-0mopidy1"),
         ]
 
@@ -105,6 +105,8 @@ def test_mopidy_spotify_configuration(File):
     assert parser.get("spotify", "enabled") == "true"
     assert parser.get("spotify", "username") is not None
     assert parser.get("spotify", "password") is not None
+    assert parser.get("spotify", "client_id") is not None
+    assert parser.get("spotify", "client_secret") is not None
 
     assert parser.get("spotify_tunigo", "enabled") == "false"
 
