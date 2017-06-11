@@ -35,7 +35,7 @@ def test_mopidy_apt_packages_are_installed(Package):
 
 def test_mopidy_pip_packages_are_installed(PipPackage):
     packages = [
-        ("Mopidy-Iris", "2.13.15"),
+        ("Mopidy-Iris", "2.14.3"),
         ]
 
     installed_packages = PipPackage.get_packages()
