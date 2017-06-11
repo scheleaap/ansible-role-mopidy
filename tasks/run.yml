@@ -1,7 +1,11 @@
 ---
-- name: "Ensure Mopidy is running and started at boot"
+- name: "Ensure Mopidy starts at boot"
+  become: true
+  service:
+    name: mopidy
+    enabled: yes
+- name: "Ensure Mopidy is running"
   become: true
   service:
     name: mopidy
     state: started
-    enabled: yes
