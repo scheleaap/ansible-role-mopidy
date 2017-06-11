@@ -35,6 +35,7 @@ def test_mopidy_apt_packages_are_installed(Package):
 
 def test_mopidy_pip_packages_are_installed(PipPackage):
     packages = [
+        ("Mopidy-Spotify-Web", "0.3.0"),
         ("Mopidy-Iris", "2.14.3"),
         ]
 
@@ -105,6 +106,11 @@ def test_mopidy_spotify_configuration(File):
     assert parser.get("spotify", "username") is not None
     assert parser.get("spotify", "password") is not None
 
+    assert parser.get("spotify_tunigo", "enabled") == "false"
+
+    assert parser.get("spotify_web", "enabled") == "true"
+    assert parser.get("spotify_web", "client_id") is not None
+    assert parser.get("spotify_web", "client_secret") is not None
 
 # def test_service_running_and_enabled(Service):
 #     service = Service("mopidy")

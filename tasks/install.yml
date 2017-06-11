@@ -40,7 +40,7 @@
     state: present
   notify:
     - restart mopidy
-- name: "Ensure Spotify plugins for Mopidy is installed"
+- name: "Ensure Spotify plugins for Mopidy are installed (apt)"
   become: true
   apt:
     name: "{{ item }}"
@@ -64,6 +64,14 @@
     state: present
   with_items:
     - python-pip
+- name: "Ensure Spotify plugins for Mopidy are installed (pip)"
+  become: true
+  pip:
+    name: Mopidy-Spotify-Web
+    version: 0.3.0
+    state: present
+  notify:
+    - restart mopidy
 - name: "Ensure Iris plugin for Mopidy is installed"
   become: true
   pip:

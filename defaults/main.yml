@@ -1,12 +1,14 @@
 ---
 # defaults file for mopidy
-mopidy_user: "{{ ansible_user_id }}"
+mopidy_audio_output: autoaudiosink
 mopidy_hostname: "::"
+mopidy_iris_country: EN
+mopidy_iris_locale: en_US
 mopidy_lastfm_username: "{{ ansible_user_id }}"
 mopidy_lastfm_password: pass
 mopidy_soundcloud_auth_token: token123
 mopidy_spotify_username: "{{ ansible_user_id }}"
 mopidy_spotify_password: pass
-mopidy_audio_output: autoaudiosink
-mopidy_iris_country: EN
-mopidy_iris_locale: en_US
+mopidy_spotify_client_id: client_id
+mopidy_spotify_client_secret: client_secret
+mopidy_user: "{{ ansible_user_id }}"
