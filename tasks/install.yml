@@ -76,7 +76,7 @@
   become: true
   pip:
     name: Mopidy-Iris
-    version: 2.14.3
+    version: "{{ mopidy_iris_version }}"
     state: present
   notify:
     - restart mopidy
