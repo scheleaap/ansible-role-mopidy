@@ -57,6 +57,13 @@
     state: present
   notify:
     - restart mopidy
+- name: "Ensure YouTube plugin for Mopidy is installed"
+  become: true
+  apt:
+    name: mopidy-youtube=2.0.0-2
+    state: present
+  notify:
+    - restart mopidy
 - name: "Ensure pip is installed"
   become: true
   apt:

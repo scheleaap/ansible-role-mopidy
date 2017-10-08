@@ -25,6 +25,7 @@ def test_mopidy_apt_packages_are_installed(Package):
         ("mopidy-soundcloud", "2.0.2-2"),
         ("mopidy-spotify", "3.1.0-0mopidy1"),
         ("mopidy-spotify-tunigo", "1.0.0-0mopidy1"),
+        ("mopidy-youtube", "2.0.0-2"),
         ]
 
     for package_name, package_version in packages:
