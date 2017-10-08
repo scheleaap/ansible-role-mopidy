@@ -36,7 +36,7 @@ def test_mopidy_apt_packages_are_installed(Package):
 def test_mopidy_pip_packages_are_installed(PipPackage):
     packages = [
         ("Mopidy-Spotify-Web", "0.3.0"),
-        ("Mopidy-Iris", "2.14.5"),
+        ("Mopidy-Iris", "3.0.0"),
         ]
 
     installed_packages = PipPackage.get_packages()
