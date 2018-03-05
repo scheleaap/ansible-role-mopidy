@@ -52,7 +52,7 @@ def test_mopidy_configuration(File):
     assert f.exists
 
     # TODO: See if we can access the mopidy_user variable here
-    assert f.user == 'root'
+    assert f.user == "root"
 
 
 def test_mopidy_audio_configuration(File):
