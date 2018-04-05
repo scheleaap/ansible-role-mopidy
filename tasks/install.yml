@@ -47,23 +47,23 @@
     state: present
   with_items:
     - mopidy-spotify=3.1.0-0mopidy1
-    - mopidy-spotify-tunigo=1.0.0-0mopidy1
+#     - mopidy-spotify-tunigo=1.0.0-0mopidy1
   notify:
     - restart mopidy
-- name: "Ensure Soundcloud plugin for Mopidy is installed"
-  become: true
-  apt:
-    name: mopidy-soundcloud=2.0.2-2
-    state: present
-  notify:
-    - restart mopidy
-- name: "Ensure YouTube plugin for Mopidy is installed"
-  become: true
-  apt:
-    name: mopidy-youtube=2.0.0-2
-    state: present
-  notify:
-    - restart mopidy
+#- name: "Ensure Soundcloud plugin for Mopidy is installed"
+#  become: true
+#  apt:
+#    name: mopidy-soundcloud=2.0.2-2
+#    state: present
+#  notify:
+#    - restart mopidy
+# - name: "Ensure YouTube plugin for Mopidy is installed"
+#   become: true
+#   apt:
+#     name: mopidy-youtube=2.0.0-2
+#     state: present
+#   notify:
+#     - restart mopidy
 - name: "Ensure pip is installed"
   become: true
   apt:
@@ -71,14 +71,14 @@
     state: present
   with_items:
     - python-pip
-- name: "Ensure Spotify plugins for Mopidy are installed (pip)"
-  become: true
-  pip:
-    name: Mopidy-Spotify-Web
-    version: 0.3.0
-    state: present
-  notify:
-    - restart mopidy
+# - name: "Ensure Spotify plugins for Mopidy are installed (pip)"
+#   become: true
+#   pip:
+#     name: Mopidy-Spotify-Web
+#     version: 0.3.0
+#     state: present
+#   notify:
+#     - restart mopidy
 - name: "Ensure Iris plugin for Mopidy is installed"
   become: true
   pip:
