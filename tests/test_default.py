@@ -108,6 +108,7 @@ def test_mopidy_spotify_configuration(File):
     assert parser.get("spotify", "password") is not None
     assert parser.get("spotify", "client_id") is not None
     assert parser.get("spotify", "client_secret") is not None
+    assert parser.get("spotify", "allow_cache") is not None
 
     assert parser.get("spotify_tunigo", "enabled") == "false"
 
