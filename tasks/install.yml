@@ -35,14 +35,14 @@
   become: true
   apt:
     name: mopidy-scrobbler=2.0.0-1
-    state: present
+    state: "{{ 'present' if mopidy_lastfm_enabled else 'absent' }}"
   notify:
     - restart mopidy
 - name: "Ensure Spotify plugin for Mopidy is installed"
   become: true
   apt:
     name: mopidy-spotify=4.0.1-0mopidy1
-    state: present
+    state: "{{ 'present' if mopidy_spotify_enabled else 'absent' }}"
   notify:
     - restart mopidy
 - name: "Ensure pip3 is installed"

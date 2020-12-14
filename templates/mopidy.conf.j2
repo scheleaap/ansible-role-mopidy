@@ -28,11 +28,14 @@ enabled = true
 country = {{ mopidy_iris_country }}
 locale = {{ mopidy_iris_locale }}
 
+{% if mopidy_lastfm_enabled -%}
 [scrobbler]
 enabled = true
 username = {{ mopidy_lastfm_username }}
 password = {{ mopidy_lastfm_password }}
+{% endif -%}
 
+{% if mopidy_spotify_enabled -%}
 [spotify]
 enabled = true
 username = {{ mopidy_spotify_username }}
@@ -40,3 +43,4 @@ password = {{ mopidy_spotify_password }}
 client_id = {{ mopidy_spotify_client_id }}
 client_secret = {{ mopidy_spotify_client_secret }}
 allow_cache = {{mopidy_spotify_allow_cache}}
+{% endif -%}
