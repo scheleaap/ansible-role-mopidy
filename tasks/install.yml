@@ -27,7 +27,7 @@
 - name: "Ensure Mopidy is installed"
   become: true
   apt:
-    name: mopidy=3.0.2-1
+    name: "mopidy={{ mopidy_version }}"
     state: present
   notify:
     - restart mopidy
