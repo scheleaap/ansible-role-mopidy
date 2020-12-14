@@ -15,15 +15,13 @@
   apt_key:
     url: https://apt.mopidy.com/mopidy.gpg
     state: present
-    validate_certs: False  # TEMP
 - name: "Ensure Mopidy APT repo is present"
   become: true
   apt_repository:
-    repo: deb http://apt.mopidy.com/ jessie main contrib non-free
+    repo: deb http://apt.mopidy.com/ buster main contrib non-free
     state: present
     filename: mopidy
     update_cache: yes
-    validate_certs: no
 - name: "Ensure Mopidy is installed"
   become: true
   apt:
