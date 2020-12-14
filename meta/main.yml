@@ -2,18 +2,12 @@ galaxy_info:
   author: scheleaap
   description: Installs and configures Mopidy
   license: MIT
-  min_ansible_version: 1.2
+  min_ansible_version: 2.0
   platforms:
     - name: Ubuntu
-      versions:
-      - trusty
-      - utopic
-      - vivid
-      - wily
-      - xenial
+      versions: all
     - name: Debian
-      versions:
-      - jessie
+      versions: all
   galaxy_tags: []
 
 dependencies: []

@@ -1,6 +1,4 @@
 ---
-# tasks file for mopidy
-
 - name: "Ensure /etc/sources.list.d exists"
   become: true
   file:

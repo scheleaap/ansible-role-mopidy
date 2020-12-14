@@ -1,5 +1,4 @@
 ---
-# defaults file for mopidy
 mopidy_audio_output: autoaudiosink
 mopidy_hostname: "::"
 mopidy_iris_version: 3.50.0
