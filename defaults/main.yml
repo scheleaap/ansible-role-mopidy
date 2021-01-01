@@ -3,14 +3,16 @@ mopidy_audio_output: autoaudiosink
 mopidy_hostname: "::"
 mopidy_file_enabled: false
 mopidy_file_media_dirs: |
-  $XDG_MUSIC_DIR|Music
-  ~/|Home
+  ~/Music|Music
 mopidy_iris_version: "3.55.4"
 mopidy_iris_country: EN
 mopidy_iris_locale: en_US
 mopidy_lastfm_enabled: false
 mopidy_lastfm_username: "{{ ansible_user_id }}"
 mopidy_lastfm_password: pass
+mopidy_m3u_enabled: false
+mopidy_m3u_playlists_dir: ~/Music/Playlists
+mopidy_m3u_base_dir: ~/Music
 mopidy_restore_state: false
 mopidy_spotify_enabled: false
 mopidy_spotify_username: "{{ ansible_user_id }}"
