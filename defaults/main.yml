@@ -23,4 +23,4 @@ mopidy_spotify_client_id: client_id
 mopidy_spotify_client_secret: client_secret
 mopidy_spotify_allow_cache: true
 mopidy_user: "{{ ansible_user_id }}"
-mopidy_version: "3.2.0-1"
+mopidy_version: "3.3.0-1"
