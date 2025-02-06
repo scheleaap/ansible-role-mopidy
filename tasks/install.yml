@@ -15,6 +15,8 @@
       - gnupg
       - python3-debian
       - python3-pip
+
+# Mopidy
 - name: "Ensure Mopidy APT repo is present"
   become: true
   ansible.builtin.deb822_repository:
@@ -32,11 +34,13 @@
     state: present
   notify:
     - restart mopidy
+
+# Mopidy-Scrobbler
 - name: "Ensure Scrobbler plugin for Mopidy is installed"
   become: true
   apt:
     name: "mopidy-scrobbler={{ mopidy_scrobbler_version }}"
-    state: "{{ 'present' if mopidy_lastfm_enabled else 'absent' }}"
+    state: "{{ 'present' if mopidy_scrobbler_enabled else 'absent' }}"
   notify:
     - restart mopidy
 
@@ -64,6 +68,8 @@
     state: present
   notify:
     - restart mopidy
+
+# Mopidy-Iris
 - name: "Ensure Iris plugin for Mopidy is installed"
   become: true
   pip:
@@ -73,7 +79,3 @@
     state: present
   notify:
     - restart mopidy
-
-# Old plugins:
-# Mopidy-Spotify-Tunigo
-# Mopidy-Spotify-Web

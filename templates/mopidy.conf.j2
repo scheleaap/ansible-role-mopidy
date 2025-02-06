@@ -1,8 +1,15 @@
+# For information about configuration values that can be set in this file see:
+#
+#   https://docs.mopidy.com/en/latest/config/
+#
+# Run `sudo mopidyctl config` to see the current effective config, based on
+# both defaults and this configuration file.
+
 [core]
 cache_dir = /var/cache/mopidy
 config_dir = /etc/mopidy
 data_dir = /var/lib/mopidy
-restore_state = {{ mopidy_restore_state }}
+restore_state = {{ mopidy_restore_state | lower }}
 
 [logging]
 color = true
@@ -11,14 +18,14 @@ color = true
 output = {{ mopidy_audio_output }}
 
 [file]
-enabled = {{ mopidy_file_enabled }}
+enabled = {{ mopidy_file_enabled | lower }}
 {% if mopidy_file_enabled -%}
 media_dirs =
     {{ mopidy_file_media_dirs }}
 {%- endif %}
 
 [m3u]
-enabled = {{ mopidy_m3u_enabled }}
+enabled = {{ mopidy_m3u_enabled | lower }}
 {% if mopidy_m3u_enabled -%}
 base_dir = {{ mopidy_m3u_base_dir }}
 playlists_dir = {{ mopidy_m3u_playlists_dir }}
@@ -36,18 +43,11 @@ enabled = true
 country = {{ mopidy_iris_country }}
 locale = {{ mopidy_iris_locale }}
 
-{% if mopidy_lastfm_enabled -%}
-[scrobbler]
-enabled = true
-username = {{ mopidy_lastfm_username }}
-password = {{ mopidy_lastfm_password }}
-
-{% endif -%}
 [spotify]
-enabled = {{ mopidy_spotify_enabled }}
+enabled = {{ mopidy_spotify_enabled | lower }}
 {% if mopidy_spotify_enabled -%}
 client_id = {{ mopidy_spotify_client_id }}
 client_secret = {{ mopidy_spotify_client_secret }}
-allow_cache = {{ mopidy_spotify_allow_cache }}
+allow_cache = {{ mopidy_spotify_allow_cache | lower }}
 
 {% endif -%}
