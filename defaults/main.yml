@@ -4,7 +4,7 @@ mopidy_hostname: "::"
 mopidy_file_enabled: false
 mopidy_file_media_dirs: |
   ~/Music|Music
-mopidy_iris_version: "3.60.1"
+mopidy_iris_version: "3.69.3"
 mopidy_iris_country: EN
 mopidy_iris_locale: en_US
 mopidy_lastfm_enabled: false
