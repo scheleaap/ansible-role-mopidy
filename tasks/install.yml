@@ -5,30 +5,26 @@
     path: /etc/sources.list.d
     state: directory
     mode: 0755
-- name: "Ensure GnuPG is installed"
+- name: "Ensure dependencies for installation are installed"
   become: true
   apt:
-    name: gnupg
+    name: "{{ packages }}"
     state: present
-- name: "Ensure /usr/local/share/keyrings exists"
-  become: true
-  file:
-    path: /usr/local/share/keyrings
-    state: directory
-    mode: 0755
-- name: "Ensure Mopidy APT key is present"
-  become: true
-  get_url:
-    url: https://apt.mopidy.com/mopidy.gpg
-    dest: /usr/local/share/keyrings/mopidy-archive-keyring.gpg
-    mode: 0644
+  vars:
+    packages:
+      - gnupg
+      - python3-debian
+      - python3-pip
 - name: "Ensure Mopidy APT repo is present"
   become: true
-  apt_repository:
-    repo: deb [signed-by=/usr/local/share/keyrings/mopidy-archive-keyring.gpg] https://apt.mopidy.com/ buster main contrib non-free
-    state: present
-    filename: mopidy
-    update_cache: yes
+  ansible.builtin.deb822_repository:
+    name: mopdiy
+    types: [deb]
+    uris: "https://apt.mopidy.com/"
+    signed_by: "https://apt.mopidy.com/mopidy.gpg"
+    suites: [bullseye]
+    components: [main contrib non-free]
+    architectures: armhf
 - name: "Ensure Mopidy is installed"
   become: true
   apt:
