@@ -39,18 +39,31 @@
     state: "{{ 'present' if mopidy_lastfm_enabled else 'absent' }}"
   notify:
     - restart mopidy
+
+# GStreamer Spotify Plugin
+- name: "Ensure GStreamer Spotify Plugin is installed"
+  become: true
+  apt:
+    deb: "https://github.com/kingosticks/gst-plugins-rs-build/releases/download/gst-plugin-spotify_0.14.0-alpha.1-1/gst-plugin-spotify_0.14.0.alpha.1-1_armhf.deb"
+
+# Mopidy-Spotify (APT)
+# - name: "Ensure Spotify plugin for Mopidy is installed (APT)"
+#   become: true
+#   apt:
+#     name: "mopidy-spotify={{ mopidy_spotify_version }}"
+#     state: "{{ 'present' if mopidy_spotify_enabled else 'absent' }}"
+#   notify:
+#     - restart mopidy
+# Mopidy-Spotify (PIP)
 - name: "Ensure Spotify plugin for Mopidy is installed"
   become: true
-  apt:
-    name: "mopidy-spotify={{ mopidy_spotify_version }}"
-    state: "{{ 'present' if mopidy_spotify_enabled else 'absent' }}"
+  pip:
+    executable: pip3
+    name: Mopidy-Spotify
+    version: "{{ mopidy_spotify_version }}"
+    state: present
   notify:
     - restart mopidy
-- name: "Ensure pip3 is installed"
-  become: true
-  apt:
-    name: python3-pip
-    state: present
 - name: "Ensure Iris plugin for Mopidy is installed"
   become: true
   pip:

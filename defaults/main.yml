@@ -16,9 +16,7 @@ mopidy_m3u_base_dir: ~/Music
 mopidy_restore_state: false
 mopidy_scrobbler_version: "2.0.1-1"
 mopidy_spotify_enabled: false
-mopidy_spotify_version: "4.1.1-0mopidy1"
-mopidy_spotify_username: "{{ ansible_user_id }}"
-mopidy_spotify_password: pass
+mopidy_spotify_version: "5.0.0a3"
 mopidy_spotify_client_id: client_id
 mopidy_spotify_client_secret: client_secret
 mopidy_spotify_allow_cache: true
